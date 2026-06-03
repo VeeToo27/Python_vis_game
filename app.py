@@ -31,14 +31,6 @@ st.set_page_config(
 # ══════════════════════════════════════════════════════════════
 st.markdown("""
 <style>
-    :root {
-        color-scheme: light !important;
-    }
-
-    .stApp {
-        background-color: white;
-        color: black;
-    }
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
 
@@ -142,18 +134,6 @@ button, p, span, li, div { font-family: 'Nunito', sans-serif !important; }
     text-align: center;
 }
 </style>
-<script>
-    const setLightTheme = () => {
-        const root = window.parent.document.documentElement;
-        root.setAttribute('data-theme', 'light');
-    };
-
-    setLightTheme();
-    new MutationObserver(setLightTheme).observe(
-        window.parent.document.documentElement,
-        { attributes: true }
-    );
-</script>
 """, unsafe_allow_html=True)
 
 # ══════════════════════════════════════════════════════════════
