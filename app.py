@@ -678,7 +678,7 @@ with st.sidebar:
     st.divider()
 
     # Colour cheat-sheet inside a popover
-    with st.popover("🎨 Colour cheat-sheet", use_container_width=True):
+    with st.popover("🎨 Colour cheat-sheet", width='stretch'):
         colours = {
             "skyblue":     "#87CEEB",
             "lightgreen":  "#90EE90",
@@ -699,7 +699,7 @@ with st.sidebar:
                 unsafe_allow_html=True)
 
     # Quick reference inside a popover
-    with st.popover("📋 Quick reference", use_container_width=True):
+    with st.popover("📋 Quick reference", width='stretch'):
         cmds = [
             ("plt.subplots()",       "Create figure + axes"),
             ("ax.set_facecolor()",   "Set background colour"),
@@ -764,7 +764,7 @@ with col_viz:
         st.iframe(html_str, height=400)
     else:
         preview_fig = PREVIEW[L["key"]]()
-        st.pyplot(preview_fig, use_container_width=True)
+        st.pyplot(preview_fig, width='stretch')
         plt.close(preview_fig)
 
 st.divider()
@@ -796,14 +796,14 @@ nav_l, nav_m, nav_r = st.columns([2, 3, 2])
 
 with nav_l:
     if li > 0:
-        if st.button("← Previous lesson", use_container_width=True):
+        if st.button("← Previous lesson", width='stretch'):
             st.session_state.lesson = li - 1
             st.rerun()
 
 with nav_m:
     if not st.session_state.stars[li]:
         if st.button(f"⭐ Mark Lesson {li+1} Complete!",
-                     type="primary", use_container_width=True):
+                     type="primary", width='stretch'):
             st.session_state.stars[li] = True
             if not st.session_state.toasted[li]:
                 st.session_state.toasted[li] = True
@@ -818,13 +818,13 @@ with nav_m:
 
 with nav_r:
     if li < 5:
-        if st.button("Next lesson →", use_container_width=True):
+        if st.button("Next lesson →", width='stretch'):
             st.session_state.lesson = li + 1
             st.rerun()
     else:
         st.link_button("📚 Matplotlib gallery →",
                        "https://matplotlib.org/stable/gallery/",
-                       use_container_width=True)
+                       width='stretch')
 
 # ══════════════════════════════════════════════════════════════
 # WIN BANNER
